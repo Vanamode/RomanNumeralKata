@@ -10,7 +10,7 @@ describe('RomanNumeralGenerator', () => {
     beforeEach(() => {
         subject = container.get<RomanNumeralGenerator>(TYPES.IRomanNumeralGenerator);
     });
-    describe('#notAllowedNegativeNumbers', () => {
+    describe('#notAllowNegativeNumbers', () => {
         it('should not allow negative numbers', () => {
             expect(() => {subject.generate(-1)}).to.throw('Negative numbers not allowed');
         });
@@ -18,6 +18,12 @@ describe('RomanNumeralGenerator', () => {
     describe('#notAllowOver3999', () => {
         it('should not allow numbers over 3999', () => {
             expect(() => {subject.generate(4000)}).to.throw('Numbers over 3999 not allowed');
+        });
+    });
+    describe('#shouldRetunEmptyStringFor0', () => {
+        it('should return empty string for 0', () => {
+            var _result = subject.generate(0);
+            expect(_result).to.eql('');
         });
     });
     describe('#shouldConvertToI', () => {

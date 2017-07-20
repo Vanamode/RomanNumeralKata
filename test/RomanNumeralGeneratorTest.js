@@ -8,7 +8,7 @@ describe('RomanNumeralGenerator', function () {
     beforeEach(function () {
         subject = inversify_config_1.container.get(types_1.default.IRomanNumeralGenerator);
     });
-    describe('#notAllowedNegativeNumbers', function () {
+    describe('#notAllowNegativeNumbers', function () {
         it('should not allow negative numbers', function () {
             chai_1.expect(function () { subject.generate(-1); }).to.throw('Negative numbers not allowed');
         });
@@ -16,6 +16,12 @@ describe('RomanNumeralGenerator', function () {
     describe('#notAllowOver3999', function () {
         it('should not allow numbers over 3999', function () {
             chai_1.expect(function () { subject.generate(4000); }).to.throw('Numbers over 3999 not allowed');
+        });
+    });
+    describe('#shouldRetunEmptyStringFor0', function () {
+        it('should return empty string for 0', function () {
+            var _result = subject.generate(0);
+            chai_1.expect(_result).to.eql('');
         });
     });
     describe('#shouldConvertToI', function () {
