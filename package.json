@@ -1,8 +1,8 @@
 {
-  "name": "bbcprep2",
+  "name": "romannumeralkata",
   "version": "1.0.0",
   "description": "BBC Test Script",
-  "main": "start.js",
+  "main": "",
   "scripts": {
     "prepublish": "tsc",
     "pretest": "tsc",
