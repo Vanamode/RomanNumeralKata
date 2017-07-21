@@ -20,7 +20,7 @@ describe('RomanNumeralGenerator', () => {
             expect(() => {subject.generate(4000)}).to.throw('Numbers over 3999 not allowed');
         });
     });
-    describe('#shouldRetunEmptyStringFor0', () => {
+    describe('#shouldReturnEmptyStringFor0', () => {
         it('should return empty string for 0', () => {
             var _result = subject.generate(0);
             expect(_result).to.eql('');
@@ -48,6 +48,12 @@ describe('RomanNumeralGenerator', () => {
         it('should convert 20 to XX', () => {
             var _result = subject.generate(20);
             expect(_result).to.eql('XX');
+        });
+    });
+    describe('#shouldConvertToMMXVII', () => {
+        it('should convert 2017 to MMXVII', () => {
+            var _result = subject.generate(2017);
+            expect(_result).to.eql('MMXVII');
         });
     });
     describe('#shouldConvertToMMMCMXCIX', () => {

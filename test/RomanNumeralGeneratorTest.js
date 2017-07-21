@@ -48,6 +48,12 @@ describe('RomanNumeralGenerator', function () {
             chai_1.expect(_result).to.eql('XX');
         });
     });
+    describe('#shouldConvertToMMXVII', function () {
+        it('should convert 2017 to MMXVII', function () {
+            var _result = subject.generate(2017);
+            chai_1.expect(_result).to.eql('MMXVII');
+        });
+    });
     describe('#shouldConvertToMMMCMXCIX', function () {
         it('should convert 3999 to MMMCMXCIX', function () {
             var _result = subject.generate(3999);
